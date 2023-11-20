@@ -6,6 +6,17 @@ import NavHomeTop from "@/components/NavHomeTop";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 export default async function Home() {
+  function misturarArray(arr: ProductType[]): ProductType[] {
+    for (let i = arr.length - 1; i > 0; i--) {
+      // Gera um índice aleatório entre 0 e i
+      const j = Math.floor(Math.random() * (i + 1));
+
+      // Troca os elementos de posição
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
   const products: ProductType[] = await axios
     .get("http://localhost:8080/products")
     .then((res) => res.data);
