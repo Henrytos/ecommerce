@@ -1,12 +1,19 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
-export default function NavHomeTop({ path }: { path: string }) {
+export default function NavHomeTop({
+  path,
+  children,
+}: {
+  path: string;
+  children: ReactNode;
+}) {
   return (
     <div className=" flex flex-col gap-6 py-8">
       <div className="w-full flex justify-between">
         <div className="flex gap-10">
           <Link
-            href="/home"
+            href="/home/0"
             className={`${
               path == "home"
                 ? "text-[#41414D] border-b-orange-500 border-b-4 font-bold"
@@ -16,7 +23,7 @@ export default function NavHomeTop({ path }: { path: string }) {
             TODOS OS PRODUTOS
           </Link>
           <Link
-            href="/home/camisetas"
+            href="/home/camisetas/0"
             className={`${
               path == "camisetas"
                 ? "text-[#41414D] border-b-orange-500 border-b-4 font-bold"
@@ -26,7 +33,7 @@ export default function NavHomeTop({ path }: { path: string }) {
             CAMISETAS
           </Link>
           <Link
-            href="/home/canecas"
+            href="/home/canecas/0"
             className={`${
               path == "canecas"
                 ? "text-[#41414D] border-b-orange-500 border-b-4 font-bold"
@@ -37,14 +44,7 @@ export default function NavHomeTop({ path }: { path: string }) {
           </Link>
         </div>
 
-        <select className="p-1 bg-[#9595951A]/5 text-[#737380]">
-          <optgroup label="Organizar por">
-            <option value="">Novidade</option>
-            <option value="">Preço:Maior-Menor</option>
-            <option value="">Preço:Menor-Maior</option>
-            <option value="">Mais vendidos</option>
-          </optgroup>
-        </select>
+        {children}
       </div>
     </div>
   );

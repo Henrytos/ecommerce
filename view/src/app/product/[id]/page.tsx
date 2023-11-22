@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import { ShoppingBag } from "lucide-react";
 import { useState } from "react";
 

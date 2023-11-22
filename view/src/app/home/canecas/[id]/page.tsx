@@ -6,18 +6,28 @@ import { useProducts } from "@/hooks/useProducts";
 import { Row } from "react-bootstrap";
 
 export default function page({ params }: { params: { id: string } }) {
-  const { products } = useProducts();
+  const { canecas } = useProducts();
 
-  const targetProducts = products.slice(+params.id * 12, +params.id * 12 + 12);
+  const targetProducts = canecas.slice(+params.id * 12, +params.id * 12 + 12);
 
-  const linksPages = products.filter((product, i) => i % 12 == 0);
+  const linksPages = canecas.filter((_, i) => i % 12 == 0);
+
   if (+params.id == 5) throw new Error("Page not found");
   return (
     <>
-      <NavHomeTop path="home" />
+      <NavHomeTop path="canecas">
+        <select className="p-1 bg-[#9595951A]/5 text-[#737380]">
+          <optgroup label="Organizar por">
+            <option value="">Novidade</option>
+            <option value="">Preço:Maior-Menor</option>
+            <option value="">Preço:Menor-Maior</option>
+            <option value="">Mais vendidos</option>
+          </optgroup>
+        </select>
+      </NavHomeTop>
       <NavHomeBottom
         linksPages={linksPages}
-        href="/home"
+        href="/home/canecas"
         paramsId={params.id}
       />
       <Row className=" gap-x-8 gap-y-6 ">
@@ -28,7 +38,7 @@ export default function page({ params }: { params: { id: string } }) {
       <NavHomeBottom
         isBottom={true}
         linksPages={linksPages}
-        href="/home"
+        href="/home/canecas"
         paramsId={params.id}
       />
     </>
