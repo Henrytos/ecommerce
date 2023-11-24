@@ -2,6 +2,7 @@
 import ProductInCart, { ProductInCartType } from "@/components/ProductInCart";
 import axios from "axios";
 import { Undo2 } from "lucide-react";
+import { Metadata } from "next";
 import { Saira } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -30,7 +31,7 @@ export default function page() {
     0
   );
   const productsPriece = productsInCart.reduce(
-    (acum, p) => acum + +p.priece * p.quantity,
+    (acum, p) => acum + +p.priece * +p.quantity,
     0
   );
 
