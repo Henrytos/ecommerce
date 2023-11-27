@@ -6,7 +6,7 @@ export default function NavHomeTop({
   children,
 }: {
   path: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <div className=" flex flex-col gap-6 py-8">

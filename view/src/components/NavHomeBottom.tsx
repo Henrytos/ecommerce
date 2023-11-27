@@ -22,6 +22,7 @@ export default function NavHomeBottom({
       <div className="flex gap-1">
         {linksPages.map((_, i) => (
           <Link
+            key={linksPages[i]._id}
             href={`${href}/${i}`}
             className={`w-8 h-8
               ${

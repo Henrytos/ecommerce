@@ -32,7 +32,7 @@ export default function page({ params }: { params: { id: string } }) {
       />
       <Row className=" gap-x-8 gap-y-6 ">
         {targetProducts.map((product) => (
-          <CardProduct product={product} />
+          <CardProduct product={product} key={product._id} />
         ))}
       </Row>
       <NavHomeBottom

@@ -3,6 +3,7 @@ import { Saira } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header";
+import CartProvider from "@/contexts/ContextCart";
 
 const saira = Saira({ subsets: ["latin"] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={saira.className}>
         <Header />
-        <main className="bg-[#9595951A]/10">{children}</main>
+        <main className="bg-[#9595951A]/10">
+          <CartProvider>{children}</CartProvider>
+        </main>
       </body>
     </html>
   );

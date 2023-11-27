@@ -2,7 +2,7 @@
 import ProductInCart, { ProductInCartType } from "@/components/ProductInCart";
 import axios from "axios";
 import { Undo2 } from "lucide-react";
-import { Metadata } from "next";
+
 import { Saira } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";

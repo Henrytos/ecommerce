@@ -4,7 +4,7 @@ import { Search, ShoppingBag } from "lucide-react";
 import { Saira_Stencil_One } from "next/font/google";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
-import ProductInCart, { ProductInCartType } from "./ProductInCart";
+import { ProductInCartType } from "./ProductInCart";
 import { useEffect, useState } from "react";
 
 const saira_title = Saira_Stencil_One({
